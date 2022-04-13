@@ -1,0 +1,27 @@
+# VirtualEnvs
+venv
+.venv
+
+# Vendor folder
+vendor
+
+#Python and Django files
+__pycache__
+*.
+coverage
+/static/
+/.coverage
+records
+*.egg-info/
+/.eggs/
+dist
+
+# IntelliJ
+.idea
+*.iml
+
+# Project files - not to be checkedin
+db.sqlite3
+
+**/*.pem
+**/*.log

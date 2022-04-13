@@ -1,0 +1,17 @@
+[run]
+branch = True
+omit = 
+	config/*
+	**/tests/*
+	__init__.py
+	manage.py
+	**/.virtualenvs/*
+	**/.venv/*
+	**/venv/*
+	**/site-packages/*
+
+[html]
+directory = coverage/htmlcov
+
+[xml]
+output = coverage/coverage.xml
