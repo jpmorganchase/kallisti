@@ -19,7 +19,7 @@ external identity providers.
 ## Built-in JWT Verification Authentication Class 
 
 There is a built-in authentication class that verifies JWT in the authentication
-header upon the request to Kallisti APIs. The token issuer can be any custom
+header upon a request to Kallisti APIs. The token issuer can be any custom
 OAuth2/OIDC service or other public user management services such as AWS
 Cognito, Okta, Firebase and Auth0.
 
@@ -35,7 +35,7 @@ set in the `kallisti/config/settings.py` file:
 Additional parameters can be used in the same `settings.py` file as below for
 configuring the authentication on Swagger UI:
 
-* `KALLISTI_AUTH_JWT_TOKEN_ENDPOINT`: OAuth2 token endpoint.
+* `KALLISTI_AUTH_JWT_TOKEN_URL`: OAuth2 token endpoint.
 * `KALLISTI_AUTH_URL`: OAuth2 authentication endpoinit.
 * `KALLISTI_AUTH_TOKEN_NAME`: OAuth2 token parameter name.
 * `KALLISTI_AUTH_CLIENT_ID`: OAuth2 client ID.

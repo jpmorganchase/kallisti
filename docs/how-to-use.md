@@ -1,10 +1,6 @@
 # How to Use Kallisti
 
-### Deployment
-
-The process to deploy Kallisti will be different depending on the
-infrastructure, but fundamentally Kallisti is a self-contained service written
-in Python, so it won't be overly complicated.
+### Run Kallisti
 
 ##### Requirements
 
@@ -128,8 +124,7 @@ Once an experiment is created, you can find its `id` from the response of `POST
 ```json
 {
     "id": "698e2183-fb16-478f-80c2-ea0080a89417",
-    "name": "Terminate a hello world pod",
-    ...
+    "name": "Terminate a hello world pod"
 }
 ```
 

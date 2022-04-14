@@ -15,7 +15,7 @@
 
 ## Overview
 
-<img src="./images/kallisti-experiment-overview.png" alt="overview" width="600" />
+<img src="./images/kallisti-overview.png" alt="overview" width="600" />
 
 Kallisti is a self-contained control plane with REST API written in Python. As
 shown in the diagram above, upon API request, Kallisti injects system turbulence
