@@ -2,6 +2,8 @@
 
 Chaos Engineering Framework across Private/Public/Hybrid Cloud Environments
 
+[![Build Status](https://github.com/jpmorganchase/kallisti/actions/workflows/build.yml/badge.svg)](https://github.com/jpmorganchase/kallisti/actions/workflows/build.yml)
+
 ##### Manage Chaos Engineering Practices as Data
 
 Kallisti is a decentralized control plane to test the resiliency of cloud-native
