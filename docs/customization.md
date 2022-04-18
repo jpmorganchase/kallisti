@@ -31,31 +31,18 @@ which allows us to add custom chaos injection modules for our own needs such as
 the chaos injection to internally managed services.
 
 The default mapping is as below. The keys are the module names and the values
-are the Python module paths.
+are the Python module paths. The map can be edited to enable custom modules.
 
-`kallisticore/lib/config.py`
+`kallisticore/config/settings.py`
 
 ```python
-_default_module_map = {
+KALLISTI_MODULE_MAP = {
     'cf': 'kallisticore.modules.cloud_foundry',
     'cm': 'kallisticore.modules.common',
     'k8s': 'kallisticore.modules.kubernetes',
     'istio': 'kallisticore.modules.kubernetes',
     'prom': 'kallisticore.modules.prometheus',
     'aws': 'kallisticore.modules.aws'
-}
-```
-
-To enable custom modules, `KALLISTI_MODULE_MAP` variable in `settings.py` can be
-used. Kallisti will append the custom mapping to the default mapping, overriding
-the default map when the key is the same.
-
-`kallisti/config/settings.py`
-
-```Python
-# Custom module map
-KALLISTI_MODULE_MAP = {
-    'module_namespace': 'module.path',
 }
 ```
 
@@ -76,8 +63,8 @@ source code.
     function as a `Credential` class
 * If additional processing of parameters is required, `__action_class__` can
   be defined in the `__init__.py` of a module and custom `Action` class can be
-  specified there. (see
-  `kallisticore/modules/prometheus/__init__.py` as an example.)
+  specified there. (see `kallisticore/modules/prometheus/__init__.py` as an 
+  example.)
   
 ### Credential Handlers for Chaos Steps
 
@@ -87,30 +74,18 @@ for our own needs such as the internally managed identity providers or vault
 systems.
 
 The default mapping is as below. The keys are the credential type and the values
-are the Python class path.
+are the Python class path. The map can be edited to enable custom credential 
+handlers.
 
-`kallisticore/lib/config.py`
+`kallisticore/config/settings.py`
 
 ```python
-_default_credential_class_map = {
+KALLISTI_CREDENTIAL_CLASS_MAP = {
     'ENV_VAR_USERNAME_PASSWORD': 'kallisticore.lib.credential.'
                                  'EnvironmentUserNamePasswordCredential',
     'TOKEN_FILE': 'kallisticore.lib.credential.TokenFileCredential',
     'K8S_SVC_ACC_TOKEN_FILE': 'kallisticore.lib.credential.'
                               'KubernetesServiceAccountTokenCredential'
-}
-```
-
-To enable custom credential handlers, `KALLISTI_CREDENTIAL_CLASS_MAP` variable
-in `settings.py` can be used. Kallisti will append the custom mapping to the
-default mapping, overriding the default map when the key is the same.
-
-`kallisti/config/settings.py`
-
-```python
-# Custom credential class map
-KALLISTI_CREDENTIAL_CLASS_MAP = {
-    'type': 'class.path',
 }
 ```
 
