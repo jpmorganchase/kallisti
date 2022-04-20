@@ -31,7 +31,7 @@ which allows us to add custom chaos injection modules for our own needs such as
 the chaos injection to internally managed services.
 
 The default mapping is as below. The keys are the module names and the values
-are the Python module paths. The map can be edited to enable custom modules.
+are the Python module paths. This map can be edited to enable custom modules.
 
 `kallisticore/config/settings.py`
 
@@ -70,11 +70,11 @@ source code.
 
 Kallisti comes with a mapping of credential handlers for the chaos injection
 steps and it is customizable, which allows us to add custom credential handlers
-for our own needs such as the internally managed identity providers or vault
+for our own needs such as the internally-managed identity providers or vault
 systems.
 
 The default mapping is as below. The keys are the credential type and the values
-are the Python class path. The map can be edited to enable custom credential 
+are the Python class path. This map can be edited to enable custom credential 
 handlers.
 
 `kallisticore/config/settings.py`

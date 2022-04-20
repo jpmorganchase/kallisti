@@ -1,6 +1,6 @@
 # Kallisti
 
-Chaos Engineering Framework across Private/Public/Hybrid Cloud Environments
+Chaos Engineering Framework across Private / Public / Hybrid Cloud Environments
 
 [![Build Status](https://github.com/jpmorganchase/kallisti/actions/workflows/build.yml/badge.svg)](https://github.com/jpmorganchase/kallisti/actions/workflows/build.yml)
 
