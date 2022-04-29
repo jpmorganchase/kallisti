@@ -37,7 +37,7 @@ configuring the authentication on Swagger UI:
 
 * `KALLISTI_AUTH_JWT_TOKEN_URL`: OAuth2 token endpoint.
 * `KALLISTI_AUTH_URL`: OAuth2 authentication endpoinit.
-* `KALLISTI_AUTH_TOKEN_NAME`: OAuth2 token parameter name.
+* `KALLISTI_AUTH_TOKEN_NAME`: OAuth2 token parameter name. (for `x-tokenName`)
 * `KALLISTI_AUTH_CLIENT_ID`: OAuth2 client ID.
 * `KALLISTI_AUTH_CLIENT_SECRET`: OAuth2 client secret.
 

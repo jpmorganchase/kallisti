@@ -114,7 +114,7 @@ An experiment is a plan to validate a hypothesis in Kallisti.
 
 ##### Step
 
-A step is an atomic action that Kallisti needs to run as part of an experiment. It
+A step is an atomic action that Kallisti runs as part of an experiment. It
 is defined in the following format:
 
 * **step** (Required): A short name describing the action to take.
@@ -124,7 +124,8 @@ two parts, the namespace and the command name.
 parameters to execute the command. You may use template
 [parameters][parameters] here. 
 * **expect** (Optional): Key value pairs describing the value expected from
-executing the step to validate the hypothesis. 
+executing the step to validate the hypothesis. Please refer to 
+[expectation][expectation] for details.
 
 > **Note:**
 > 
@@ -339,10 +340,10 @@ service over multiple Kubernetes clusters.
 
 On the right side of the diagram we have the target service across two
 Kubernetes clusters with the load balancer on top. Meanwhile we see Kallisti
-deployed in one of the clusters on the left side as well as the experiment
-JSON. Experiment JSON is the definition of chaos experiments and once it's
-triggered as shown in arrow #1, we can see Kallisti following the instructions
-subsequently in arrow #2 through #4.
+deployed in one of the clusters as well as the experiment JSON on the left side.
+Experiment JSON is the definition of chaos experiments and once it's
+triggered as shown in arrow #1 as a trial, we can see Kallisti following the
+instructions subsequently in arrow #2 through #4.
  
 Firstly Kallisti retrieves token from service account token file as it's
 specified in `credentials` in the first step of the experiment JSON. Followed
@@ -351,5 +352,6 @@ by the credential retrieval, it proceeds to talk to Kube API to
 Kallisti executes the second step of `http_probe` to check the specified url
 to see if the service is still up and running.
 
+[expectation]: ./expectation.md
 [parameters]: ./experiment-template.md
 [modules]: ./modules.md

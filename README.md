@@ -18,8 +18,9 @@ allowing the flexible design of chaos testing scenarios in a secure manner.
 Project Kallisti is the open-source fork of a chaos engineering framework that
 originally started within JPMorgan Chase in 2018. Today, Kallisti is used by a
 number of applications for chaos testing within JPMorgan Chase. It is now the
-upstream source of our internal chaos engine and continues to be actively
-maintained. Keep an eye on our [roadmap][roadmap] for more to come!
+[upstream source](https://github.com/jpmorganchase/kallisti-core) of our 
+internal chaos engine and continues to be actively maintained. Keep an eye on 
+our [roadmap][roadmap] for more to come!
 
 #### Chaos Injection Capabilities
 
