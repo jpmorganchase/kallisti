@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
-from django.urls import re_path, path
+from django.urls import re_path
 from django.conf.urls.static import static
 from django.shortcuts import redirect
 from django.urls import path, include, reverse
@@ -45,20 +45,23 @@ def redirect_to_swagger_ui(*args, **kwargs):
 
 
 urlpatterns = [
-                  path('api/v1/', include([
-                      re_path(r'^', include(kallistiurls)),
-                      re_path(r'^info', InfoAPI.as_view(), name='info'),
-                      re_path(r'^health', HealthAPI.as_view(), name='health'),
-                  ])),
-                  re_path(r'^$', redirect_to_swagger_ui),
-                  re_path(r'^swagger(?P<format>\.json|\.yaml)$',
-                      schema_view.without_ui(cache_timeout=None),
-                      name='schema-json'),
-                  re_path(r'^swagger/$',
-                      schema_view.with_ui('swagger', cache_timeout=None),
-                      name='swagger-ui'),
-                  re_path(r'^redoc/$',
-                      schema_view.with_ui('redoc', cache_timeout=None),
-                      name='swagger-redoc'),
+                path('api/v1/', include([
+                                        re_path(r'^', include(kallistiurls)),
+                                        re_path(r'^info', InfoAPI.as_view(),
+                                                name='info'),
+                                        re_path(r'^health',
+                                                HealthAPI.as_view(),
+                                                name='health'),
+                                        ])),
+                re_path(r'^$', redirect_to_swagger_ui),
+                re_path(r'^swagger(?P<format>\.json|\.yaml)$',
+                        schema_view.without_ui(cache_timeout=None),
+                        name='schema-json'),
+                re_path(r'^swagger/$',
+                        schema_view.with_ui('swagger', cache_timeout=None),
+                        name='swagger-ui'),
+                re_path(r'^redoc/$',
+                        schema_view.with_ui('redoc', cache_timeout=None),
+                        name='swagger-redoc'),
               ] + static(settings.STATIC_URL,
                          document_root=settings.STATIC_ROOT)
